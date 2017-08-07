@@ -300,6 +300,7 @@
 <script src="Scripts/owl.carousel.min.js"></script>
 <script>
     $(function(){
+        //获取屏幕宽度设置简介位置
         intro_w();
         function intro_w(){
             var iw=$(".intro").css("width"),
@@ -310,6 +311,7 @@
             $(".stage").css("margin-left",-Stage_m)
             
         };
+        //掌握语言板块hover后的特效
         $(".SPECIALBOX").find(".SPECIAL").hover(function () {
                 $(".SPECIALBOX").css("margin-left","-60px");
                 $(this).find(".SPECIAL").css("width","440px");
@@ -344,6 +346,7 @@
             $(this).find(".box").css("padding-left","0px");
             $(this).find("p").css({"padding-left":"30px","padding-right":"30px"})
         });
+        //设置其他技能板块hover后显示文字
         $(".front").hover(function () {
             $(this).find(".info_box").css("display","flex");
             $(this).parent().addClass("imghover");
@@ -351,19 +354,7 @@
             $(this).find(".info_box").css("display","none");
             $(this).parent().removeClass("imghover");
         });
-        $(".nav .search").children("a").click(function () {
-            $(this).children("img").toggleClass("active");
-            if($(".close").hasClass("active")){
-                $(".searchBox").show();
-                $(".searchBox")[0].focus();
-            }
-            else{
-                $(".searchBox").hide().blur();
-            }
-        });
-        //如果登录则隐藏登录按钮
-        $(".login_prev").hide();
-        //滚动条下滑隐藏导航栏，上滑出现
+        //当网页下移时移出导航栏，上移时显示
         var p=$(window).scrollTop();
         $(window).scroll(function () {
             var s=$(window).scrollTop();
@@ -375,10 +366,8 @@
             }
             setTimeout(function () {
                 p=s;
-            },0)
-        })
-        //当div移动到可视位置时，执行css3特效
-        $(document).scroll(function () {
+            },0);
+          //当其他技能移动到可见位置时，执行css3反转特效
             var wh=$(window).height();
             var nh=$(".NEWBOX").height();
             var nt=$(".NEWBOX").offset().top;
@@ -407,17 +396,7 @@
                 })
             }
         });
-        $(".CName").click(function () {
-            $(this).siblings().removeClass("active");
-            $(this).addClass("active");
-        });
-        $(".nav a").click(function () {
-            var aa=$(this).parent().index();
-            var bb=$(".index_center").find("section");
-            $("html, body").animate(
-                {scrollTop:
-                bb.eq(aa).offset().top+ "px"}, 500)
-        })
+        //点击logo时回到顶部   
         $(".logo").click(function () {
             $("html, body").animate(
                 {scrollTop: "0px"}, 500)
