@@ -1,0 +1,102 @@
+﻿header {
+    min-width: 1028px;
+    background: #2983c5;
+    height: 68px;
+    padding: 0 40px;
+    width: 100%;
+    position: relative;
+    top: 0;
+    z-index: 10;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 0 -1px 8px 1px #333;
+    -moz-box-shadow: 0 -1px 8px 1px #333;
+    -webkit-box-shadow: 0 -1px 8px 1px #333;
+    -moz-transition: all, 0.5s;
+    -webkit-transition: all, 0.5s;
+    -o-transition: all, 0.5s;
+    -ms-transition: all, 0.5s;
+    transition: all, 0.5s;
+    text-align: center
+}
+
+header .logo {
+    float: left;
+    height: 68px;
+    margin-left: 200px;
+    margin-right: 100px;
+    position: relative;
+}
+
+header .logo:after {
+    width: 100px;
+    height: 5px;
+    background-color: #fff;
+    display: none;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -20px
+}
+
+header .logo:hover:after, header .logo.active:after {
+    display: block
+}
+
+header .logo img {
+    height: 60px;
+    width: 60px;
+    margin-top: 5px;
+}
+
+header .nav {
+    display: inline-block;
+    line-height: 68px;
+    text-align: center;
+    float: right;
+    width: 800px;
+    white-space: nowrap
+}
+
+header .nav > div {
+    width: 70px;
+    margin-right: 95px;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    position: relative
+}
+header .nav > div[name='baidusnap0'] {
+    display: none
+}
+
+header .nav > div[name='baidusnap1'] {
+    display: none
+}
+
+header .nav > div:after {
+    width: 70px;
+    height: 5px;
+    background-color: #fff;
+    display: none;
+    content: '';
+    position: absolute;
+    bottom: 0
+}
+header .nav > div.active {
+    font-weight: bold
+}
+
+header .nav > div.active:after {
+    display: block
+}
+
+header .nav > div:hover {
+    font-weight: bold
+}
+
+header .nav > div:hover:after {
+    display: block
+}
